@@ -24,7 +24,7 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-app.get('/api/system/:mapId/:systemId', async (req, res) => {
+app.get('/simples/system/:mapId/:systemId', async (req, res) => {
   const { mapId, systemId } = req.params;
   
   if (!mapId || !systemId) {
@@ -105,5 +105,5 @@ process.on('SIGINT', async () => {
 app.listen(port, '0.0.0.0', () => {
   console.log(`API server running on port ${port}`);
   console.log(`Health check: http://localhost:${port}/health`);
-  console.log(`API endpoint: http://localhost:${port}/api/system/{mapId}/{systemId}`);
+  console.log(`API endpoint: http://localhost:${port}/simples/system/{mapId}/{systemId}`);
 });
