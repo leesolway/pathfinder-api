@@ -47,7 +47,7 @@ app.get('/simples/system/:mapId/:systemId', async (req, res) => {
       SELECT s.* 
       FROM \`system\` s
       INNER JOIN \`map\` m ON m.id = s.mapId
-      WHERE m.mapId = ? AND s.systemId = ?
+      WHERE s.mapId = ? AND s.systemId = ?
     `;
     
     const [rows] = await pool.execute(query, [mapId, systemId]);
