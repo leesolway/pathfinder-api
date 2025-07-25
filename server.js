@@ -45,8 +45,8 @@ app.get('/api/system/:mapId/:systemId', async (req, res) => {
   try {
     const query = `
       SELECT s.* 
-      FROM system s
-      INNER JOIN map m ON m.id = s.mapId
+      FROM \`system\` s
+      INNER JOIN \`map\` m ON m.id = s.mapId
       WHERE m.id = ? AND s.id = ?
     `;
     
